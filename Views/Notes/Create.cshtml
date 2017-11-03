@@ -1,0 +1,34 @@
+@model CfWorkshopDotNetCore.Models.Note
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <h2>New Note</h2>
+            <hr/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+           <form asp-controller="Notes" asp-action="Create">
+               <div asp-validation-summary="ModelOnly" class="b-gdanger"></div>
+               <input type="hidden" asp-for="ID" />
+               <p class="bg-danger"><span asp-validation-for="ID" /></p>
+
+               <div class="form-group">
+                   <label>Created:</label>
+                   <p class="form-control-static">@Html.DisplayFor(m => m.Created)</p>
+                   <input type="hidden" asp-for="Created" />
+                   <p class="bg-danger"><span asp-validation-for="Created" /></p>
+               </div>
+               <div class="form-group">
+                   <label for="Text">Note:</label>
+                   <textarea asp-for="Text" class="form-control" rows="3" cols="20" placeholder="Note"></textarea>
+                   <p class="bg-danger"><span asp-validation-for="Text"/></p>
+               </div>
+               <div class="well">
+                   <input type="submit" class="btn btn-primary" value="Save" />
+                   <a asp-controller="Notes" asp-action="Index" class="btn btn-warning">Cancel</a>
+               </div>
+            </form>
+        </div>
+    </div>
+</div>

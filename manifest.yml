@@ -1,0 +1,7 @@
+---
+applications:
+- name: cf-workshop-dotnet-core
+  env:
+    ASPNETCORE_ENVIRONMENT: development
+  services:
+  - cf-workshop-db

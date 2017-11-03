@@ -1,0 +1,43 @@
+@model IEnumerable<CfWorkshopDotNetCore.Models.Note>
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <h2>All Notes</h2>
+            <hr/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>Created</td>
+                            <td>Note</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Created)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Text)</td>
+                                <td>
+                                    <a asp-controller="Notes" asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a>
+                                    &nbsp;
+                                    <a asp-controller="Notes" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col md-12">
+            <div class="well">
+                <a asp-controller="Notes" asp-action="Create" class="btn btn-success">New Note</a>
+            </div>
+        </div>
+    </div>
+</div>
