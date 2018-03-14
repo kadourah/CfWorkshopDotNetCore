@@ -5,3 +5,4 @@ applications:
     ASPNETCORE_ENVIRONMENT: development
   services:
   - cf-workshop-db
+  - service-registry
