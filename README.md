@@ -36,4 +36,5 @@ Run the application locally as an ASP.NET Core app for testing:
 
 Running in CF is as usual too:
 
+    cf create-service p-mysql 100mb cf-workshop-db
     cf push cf-workshop-dotnet-core
