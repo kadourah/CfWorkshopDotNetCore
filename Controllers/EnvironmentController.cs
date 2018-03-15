@@ -27,6 +27,8 @@ namespace CfWorkshopDotNetCore.Controllers
         public IActionResult Index()
         {
             ViewData["InstanceIndex"] = ApplicationOptions.InstanceIndex;
+            ViewData["InstanceIP"] = ApplicationOptions.InstanceIP;
+            ViewData["InstancePort"] = ApplicationOptions.Port;
             ViewData["InstanceId"] = ApplicationOptions.InstanceId;
             ViewData["ApplicationName"] = ApplicationOptions.ApplicationName;
             ViewData["ApplicationUris"] = ApplicationOptions.ApplicationUris != null ? ApplicationOptions.ApplicationUris[0] : "none";
